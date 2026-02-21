@@ -14,9 +14,16 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 # =============================
 # Load Gita Dataset (NEW STRUCTURE)
 # =============================
-with open("data/gita.json", "r", encoding="utf-8") as f:
-    verses = json.load(f)
+# with open("data/gita.json", "r", encoding="utf-8") as f:
+#     verses = json.load(f)
+from pymongo import MongoClient
 
+mongo_client = MongoClient(os.getenv("MONGO_URI"))
+db = mongo_client["krishna_counsel"]
+collection = db["gita_verses"]
+
+verses = list(collection.find({}, {"_id": 0}))
+print("Total verses loaded:", len(verses))
 # =============================
 # Prepare Documents for Search
 # =============================

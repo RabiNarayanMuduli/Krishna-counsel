@@ -1,0 +1,14 @@
+Krishna-counsel
+│
+├── main.py
+├── brain.py
+├── avatar.py
+├── auth.py
+├── scripture_upload.py
+│
+├── data/
+│     ├── gita.json
+│     ├── ramayan.json
+│
+├── avatars/
+└── .env
