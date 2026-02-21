@@ -8,7 +8,7 @@ import edge_tts
 import pygame
 import uuid
 import os
-
+#hiiii
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
 
